@@ -2,7 +2,8 @@
  * @author wjqserver
  * @name 灯花框架
  * @team wjqserver studio
- * @version 1.0.2
+ * @origin wjqserver studio
+ * @version 1.0.4
  * @description 灯花(toka)外围组件
  * @rule ^(toka|灯花)
  * @admin false
@@ -18,7 +19,7 @@ module.exports = async s => {
     function wait(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
-    if (s.getMsg() == '灯花') {
+    if (s.getMsg() == '灯花' || s.getMsg() == 'toka')  {
         await s.reply('欢迎使用灯花框架，请选择功能：\n1. 京东账号登陆\n2. 续签账户登陆');
         // 框架自检
         let frame_check = await checkFrame(TokaFrameUrl);
