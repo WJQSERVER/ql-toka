@@ -19,7 +19,7 @@ module.exports = async s => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     if (s.getMsg() == '灯花') {
-        await s.reply('欢迎使用灯花框架，请选择功能：\n1. 京东账号登陆\n2. 续签账户登陆\n');
+        await s.reply('欢迎使用灯花框架，请选择功能：\n1. 京东账号登陆\n2. 续签账户登陆');
         // 框架自检
         let frame_check = await checkFrame(TokaFrameUrl);
         if (frame_check === false) {
