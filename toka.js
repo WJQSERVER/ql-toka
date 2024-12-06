@@ -2,7 +2,7 @@
  * @author wjqserver
  * @name 灯花框架
  * @team wjqserver studio
- * @version 1.0.1
+ * @version 1.0.2
  * @description 灯花(toka)外围组件
  * @rule ^(toka|灯花)
  * @admin false
@@ -85,8 +85,8 @@ module.exports = async s => {
     }
 }
 
-function relogin(TokaFrameUrl, phone, password) {
-    let { data: res } = axios.get(TokaFrameUrl + '/api/pwd_login?phone=' + phone + '&password=' + password)
+async function relogin(TokaFrameUrl, phone, password) {
+    let { data: res } = awaitaxios.get(TokaFrameUrl + '/api/pwd_login?phone=' + phone + '&password=' + password)
     if (res.err_code === 0) {
         let relogin_msg = '登陆成功';
         return relogin_msg;
@@ -96,8 +96,8 @@ function relogin(TokaFrameUrl, phone, password) {
     }
 }
 
-function checkFrame(TokaFrameUrl) {
-    let { data: res } = axios.get(TokaFrameUrl + '/api/healthcheck')
+async function checkFrame(TokaFrameUrl) {
+    let { data: res } = awaitaxios.get(TokaFrameUrl + '/api/healthcheck')
     // http 状态码 200 正常
     if (res.status === 200) {
         return true;
